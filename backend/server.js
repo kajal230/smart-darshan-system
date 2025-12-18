@@ -5,6 +5,8 @@ import { pool } from "./shared/db/db.js";
 import authRoutes from './services/auth-service/routes/auth.route.js';
 
 
+import bookingRoutes from './services/booking-service/routes/booking.routes.js';
+
 
 
 dotenv.config();
@@ -16,6 +18,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 
 
+app.use('/api/bookings', bookingRoutes);
 app.get("/", (req, res) => {
   res.send("App is running");
 });
