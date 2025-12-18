@@ -7,6 +7,9 @@ import authRoutes from './services/auth-service/routes/auth.route.js';
 
 import bookingRoutes from './services/booking-service/routes/booking.routes.js';
 
+import templeRoutes from './services/temple-service/routes/temple.routes.js';
+
+
 
 
 dotenv.config();
@@ -19,6 +22,7 @@ app.use('/api/auth', authRoutes);
 
 
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/temples', templeRoutes);
 app.get("/", (req, res) => {
   res.send("App is running");
 });
