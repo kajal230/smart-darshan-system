@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchTemples } from '../services/api';
-import { Link } from 'react-router-dom';
+import TempleCard from '../components/TempleCard';
 
 export default function Temples() {
   const [temples, setTemples] = useState([]);
@@ -10,14 +10,11 @@ export default function Temples() {
   }, []);
 
   return (
-    <div>
+    <div className="page">
       <h2>Temples</h2>
+
       {temples.map(t => (
-        <div key={t.id}>
-          <Link to={`/temple/${t.id}`}>
-            <h3>{t.name}</h3>
-          </Link>
-        </div>
+        <TempleCard key={t.id} temple={t} />
       ))}
     </div>
   );

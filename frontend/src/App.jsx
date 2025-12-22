@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Temples from './pages/Temples';
@@ -8,7 +6,10 @@ import TempleDetails from './pages/TempleDetails';
 import Booking from './pages/Booking';
 import Admin from './pages/Admin';
 
-function App() {
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
@@ -17,7 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/temples" element={<Temples />} />
         <Route path="/temple/:id" element={<TempleDetails />} />
-        <Route path="/booking" element={<Booking />} />
+        <Route path="/booking/:slotId" element={<Booking />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
 
@@ -25,5 +26,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
