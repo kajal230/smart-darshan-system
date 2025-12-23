@@ -45,3 +45,5 @@ export const fetchPredictedCrowd = (templeId, slotTime) =>
 
 export const fetchPeakHour = (templeId) =>
   API.get(`/crowd/peak-hour?templeId=${templeId}`);
+export const fetchParikramaRoute = () =>
+  API.get('/traffic/parikrama-route');

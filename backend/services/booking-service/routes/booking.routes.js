@@ -2,13 +2,26 @@ import express from 'express';
 import {
   createSlot,
   getAvailableSlots,
-  bookSlot
+  bookSlotByPhone
 } from '../controllers/booking.controller.js';
 
 const router = express.Router();
 
-router.post('/slots', createSlot);        // Admin
+/**
+ * ADMIN ROUTES
+ */
+
+// Create a new slot (Admin only)
+router.post('/slots', createSlot);
+
+/**
+ * USER ROUTES
+ */
+
+// Get available slots for a temple
 router.get('/slots/:templeId', getAvailableSlots);
-router.post('/book', bookSlot);           // User
+
+// Book a slot (Phone-based, FCFS)
+router.post('/book', bookSlotByPhone);
 
 export default router;
