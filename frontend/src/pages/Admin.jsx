@@ -10,12 +10,14 @@ export default function Admin() {
 
   useEffect(() => {
     fetchAdminDashboard()
-      .then(res => setData(res.data))
+      .then(res => {
+        setData(res.data.data); // ✅ FIXED
+      })
       .catch(err => console.error(err));
   }, []);
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="page">
       <h2>📊 Admin Dashboard</h2>
 
       {/* TABLE */}
